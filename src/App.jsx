@@ -13,6 +13,7 @@ import {
   WatchedList,
   WatchedSummary,
 } from "./Components/index";
+import useLocalStorageState from "./Components/UseLocalStorageState";
 
 const key = "e12869ee";
 export default function App() {
@@ -22,16 +23,7 @@ export default function App() {
   const [error, seterror] = useState();
   const [query, setQuery] = useState("");
   const [selectedtitle, setselectedtitle] = useState();
-  const [watched, setWatched] = useState(function () {
-    const WatchedMovie = localStorage.getItem("watched");
-    return JSON.parse(WatchedMovie);
-  });
-  useEffect(
-    function () {
-      localStorage.setItem("watched", JSON.stringify(watched));
-    },
-    [watched]
-  );
+  const [watched, setWatched] = useLocalStorageState([], "watched");
   useEffect(
     function () {
       const controller = new AbortController();

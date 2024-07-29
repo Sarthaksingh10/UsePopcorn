@@ -35,6 +35,6 @@ export default function WatchedMovie({ movie, OnDeleteWatched }) {
 }
 
 WatchedMovie.propTypes = {
-  movie: propTypes.object.isRequired,
+  movie: propTypes.any.isRequired,
   OnDeleteWatched: propTypes.func.isRequired,
 };

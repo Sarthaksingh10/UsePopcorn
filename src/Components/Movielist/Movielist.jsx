@@ -11,6 +11,6 @@ export default function Movielist({ movies, onselectmovie }) {
   );
 }
 Movielist.propTypes = {
-  movies: propTypes.any.isRequired,
+  movies: propTypes.array.isRequired,
   onselectmovie: propTypes.func.isRequired,
 };
